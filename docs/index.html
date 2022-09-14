@@ -149,11 +149,15 @@ div.WordSection1
 <p class=MsoNormal align=center style='text-align:center'><span
 style='font-size:20.0pt;line-height:107%'>Microservices-Based Online Store </span></p>
 
-<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Video: <a
-href="https://youtu.be/Mb2B3ByuvJ0" target="_blank">https://youtu.be/Mb2B3ByuvJ0</a></span></p>
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Video: </span><a
+href="https://youtu.be/Mb2B3ByuvJ0" target="_blank"><span style='font-size:
+14.0pt;line-height:107%'>https://youtu.be/Mb2B3ByuvJ0</span></a></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>GitHub Repo:
-</span></p>
+<a href="https://github.com/Ashot72/Microservices-based-Online-Store"
+target="_blank">https://github.com/Ashot72/Microservices-based-Online-Store</a></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>I built an Online
 Store Next.js (React) app using Microservices.</span></p>
@@ -239,7 +243,7 @@ style='font-size:14.0pt;line-height:107%'> - Developers have the flexibility to
 experiment with different technologies</span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>while
-creating various services.<i> ­</i></span></p>
+creating various services.<i> </i></span></p>
 
 <p class=MsoNormal><i><span style='font-size:14.0pt;line-height:107%'>Independent
 Deployment of each module</span></i><span style='font-size:14.0pt;line-height:
@@ -280,8 +284,8 @@ launched.</span></p>
 
 <p class=MsoNormal><i><span style='font-size:14.0pt;line-height:107%'>Not
 Practical for Small Applications</span></i><span style='font-size:14.0pt;
-line-height:107%'> - Microservices architecture is a good option for bigger applications.
-But, for smaller apps, it will probably be more</span></p>
+line-height:107%'> - Microservices architecture is a good option for bigger
+applications. But, for smaller apps, it will probably be more</span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Time
 consuming and challenging to implement.</span></p>
@@ -324,8 +328,7 @@ run, and a container is a running instance of the image.</span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Install
 Docker desktop for windows <a
-href="https://docs.docker.com/desktop/install/windows-install/%20%20%20%20%20%0d">https://docs.docker.com/desktop/install/windows-install/    
-</a></span></p>
+href="https://docs.docker.com/desktop/install/windows-install/%0d">https://docs.docker.com/desktop/install/windows-install/</a></span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>The <i>Docker
 client</i> provides a command line interface (CLI) that allows you to issue
@@ -437,8 +440,8 @@ us. If you are running</span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Kubernetes
 on your own computer, it is extremally likely that you are only running one
-Node by default. So, you have one virtual machine. It is only once you start deploying
-to some cloud provider </span></p>
+Node by default. So, you have one virtual machine. It is only once you start
+deploying to some cloud provider </span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>you may have
 multiple Nodes.</span></p>
@@ -520,7 +523,7 @@ the second step here in the config file (Figure 11) Please allow us to access
 these services from other Pods or essentially containers inside of our
 Kubernetes cluster. To do so Kubernetes is going</span></p>
 
-<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'> to create
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>to create
 something else called a <i>service</i>. <i>Service</i> is something that gives
 us access to running Pods or running containers inside of our cluster. It is
 handling networking among different micro services.</span></p>
@@ -532,7 +535,8 @@ src="index_files/image015.jpg"></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 15</span></p>
 
-<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Kubernetes terminology.</span></p>
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Kubernetes
+terminology.</span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>We are going
 to create Kubernetes config files which will include Deployments, Pods,
@@ -599,7 +603,7 @@ thought of as a pod spec or a pod config file. We have one <i>container</i>
 which should have a <i>name</i> of <i>auth </i>and should run image of our</span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>docker id
-which is <i>ashot72/auth. </i>To apply this config file, we will run <i>kubectl 
+which is <i>ashot72/auth. </i>To apply this config file, we will run <i>kubectl
 apply -f auth-depl.yaml </i>command. After it the deployment should be crated.</span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Next, we are
@@ -664,9 +668,9 @@ create a <i>spec</i> to setup a selector that is going to tell the service what
 pods it is going to allow to access to. In this case we want to use or we want
 to make sure that we tell the service to direct any</span></p>
 
-<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>incoming
-traffic to the pod with a label of <i>app auth-srv</i> that is going to be the
-label that we are going to look for so we will provide that label to the <i>selector</i>
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>incoming traffic
+to the pod with a label of <i>app auth-srv</i> that is going to be the label
+that we are going to look for so we will provide that label to the <i>selector</i>
 field. We can optionally specify <i>type </i>ClusterIP. If</span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>we do not
@@ -722,10 +726,10 @@ will then feed that thing into our cluster using that same <i>kubectl apply</i>
 command. Load balancer service is a very special little thing just about all
 the objects we have been discussing. All our</span></p>
 
-<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>stuff has been
-created inside of our cluster. We have created services inside the cluster,
-pods inside the cluster, deployments inside the cluster. A load balancer
-service is a little bit different. A load balancer</span></p>
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>stuff has
+been created inside of our cluster. We have created services inside the
+cluster, pods inside the cluster, deployments inside the cluster. A load
+balancer service is a little bit different. A load balancer</span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>service is
 going to tell our cluster to reach out to its cloud provider. </span></p>
@@ -1124,8 +1128,8 @@ our pod. There are two ways in which scaffold is</span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>going to try
 to update our code. First off, if we make a change to a typescript file as
-indicated by this **/*.tsx then skaffold will take that change file and
-directly throw it into our pod. Our pod is going to</span></p>
+indicated by this **/*.tsx then skaffold will take that change file and directly
+throw it into our pod. Our pod is going to</span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>have the
 latest code inside of it. </span></p>
@@ -1139,8 +1143,8 @@ src="index_files/image041.png"></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Whenever
 something changes inside this client directory, scaffold is going to try to
-take those changes and somehow update our pod. There are two ways in which
-scaffold is going to update our pod. First</span></p>
+take those changes and somehow update our pod. There are two ways in which scaffold
+is going to update our pod. First</span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>off, if we
 make a change to a Typescript file as indicated by **/*.tsx match then scaffold
@@ -1220,7 +1224,7 @@ src="index_files/image045.jpg"></p>
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 45</span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>You can see
-that in this case in our auth-mongo.depl.yaml file <i>kind</i>  is not <i>Deployment</i>
+that in this case in our auth-mongo.depl.yaml file <i>kind</i> is not <i>Deployment</i>
 but <i>StatefulSet</i> and we also have <i>kind</i> of <i>PersistentVoume</i>
 and <i>PersistentVolumeClaim</i>.</span></p>
 
@@ -1499,7 +1503,7 @@ src="index_files/image055.jpg"></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 55</span></p>
 
-<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'> I am taking
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>I am taking
 that token, go to </span><a href="http://jwt.io/" target="_blank"><span
 style='font-size:14.0pt;line-height:107%'>http://jwt.io</span></a><span
 style='font-size:14.0pt;line-height:107%'> which is a web site just to help
@@ -1643,8 +1647,8 @@ request to just /api/users/currentuser. We do not</span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>specify a
 domain so Next.js or precisely Axios attempts to issue that request. That route
-goes through some networking layer once again. Networking in the diagram is some
-HTTP stuff implemented by</span></p>
+goes through some networking layer once again. Networking in the diagram is
+some HTTP stuff implemented by</span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Node.js
 layer and works similar to the browser. If we do not specify a domain in
@@ -1669,7 +1673,7 @@ received Figure 61 error. 127.0.0.1 error in</span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 61 is
 not talking about localhost on your personal machine. That is localhost inside
-the container.  Nothing is listening on localhost:80 inside the container.</span></p>
+the container. Nothing is listening on localhost:80 inside the container.</span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>In this case
 we should also specify a domain but domain is going to be a little bit
@@ -1777,10 +1781,10 @@ Streaming Server is an extremely performant, lightweight reliable streaming
 platform built on NATS </span><a href="https://nats.io/" target="_blank"><span
 style='font-size:14.0pt;line-height:107%'>https://nats.io/</span></a></p>
 
-<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>NATS
-implements a publish-subscribe message distribution model for one-to-many
-communication. A publisher sends a message on a subject and any active
-subscriber listening on that subject receives the message.</span></p>
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>NATS implements
+a publish-subscribe message distribution model for one-to-many communication. A
+publisher sends a message on a subject and any active subscriber listening on
+that subject receives the message.</span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
 
@@ -1798,9 +1802,9 @@ src="index_files/image070.png"></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 71</span></p>
 
-<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>We create
-nats-deply.yaml similar to others by specifying nats-streaming image getting
-from the Docker Hub.</span></p>
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>We create nats-deply.yaml
+similar to others by specifying nats-streaming image getting from the Docker
+Hub.</span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>In our
 project we will use node-nats-streaming client library </span><a
@@ -1841,9 +1845,9 @@ essentially types of events or channels of events that we are going to be
 listening to specifically inside of our different</span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>services.
-For example, on a NATS streaming server we will create a collection of
-different topics or channels. Whenever we want to emit some kind of event, we
-will create it inside for one service. We will</span></p>
+For example, on a NATS streaming server we will create a collection of different
+topics or channels. Whenever we want to emit some kind of event, we will create
+it inside for one service. We will</span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>reach out to
 the NATS streaming library and we will tell it to publish this event to the </span><span
@@ -2148,7 +2152,7 @@ payment is created then a user</span><span style='color:black'>'</span><span
 style='font-size:14.0pt;line-height:107%'>s items should be removed from his/her
 shopping cart.</span></p>
 
-<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>                                                                                                                                                                                 </span></p>
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
 
 <p class=MsoNormal><img border=0 width=681 height=280 id="Picture 70"
 src="index_files/image088.png"></p>
@@ -2157,9 +2161,7 @@ src="index_files/image088.png"></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>When 15-second
 interval timer is timed out it is notified to Product Service (we will talk
-about Expiration Service).</span></p>
-
-<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'> </span></p>
+about Expiration Service). </span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>When we
 update a product information, say, the price of a product, it is notified to
@@ -2317,10 +2319,9 @@ style='font-size:14.0pt;line-height:107%'> and see that it has a version of 1.
 It is then going to take a look at the version listed inside that event.
 Because</span></p>
 
-<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>we have
-already processed version 1 of this record and this incoming record has a
-version of 2, we can say there is no missing versions that we are misses out
-on.</span></p>
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>we have already
+processed version 1 of this record and this incoming record has a version of 2,
+we can say there is no missing versions that we are misses out on.</span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
 
@@ -2524,8 +2525,8 @@ allows us to essentially setup long live timers.</span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>We are going
 to tell us Bull.js to remind us in 15 seconds to do some amount of work. We are
-going to pass that command into Bull.js and Bull.js is going to store this
-little reminder inside of a Redis</span></p>
+going to pass that command into Bull.js and Bull.js is going to store this little
+reminder inside of a Redis</span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>instance.
 Redis is essentially an in-memory database and it is commonly useful for tasks
@@ -2596,19 +2597,7 @@ src="index_files/image113.png"></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>For the
 testing purposes you can use 4242 4242 4242 4242 Card Information, any valid
-three-digit CVC such as 567 and any future date such as 12/34.                              </span></p>
-
-<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
-
-<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
-
-<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
-
-<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
-
-<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
-
-<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+three-digit CVC such as 567 and any future date such as 12/34.</span></p>
 
 <p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
 

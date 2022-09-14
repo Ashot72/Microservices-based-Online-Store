@@ -22,4 +22,5 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/cont
 ```
 
 Go to Microservices-Based Online Store [Video](https://youtu.be/527022qAb9M) page
-Go to Microservices-Based Online Store [Description](https://github.com/Ashot72/Microservices-based-Online-Store/) page
+
+Go to Microservices-Based Online Store [Description](https://ashot72.github.io//Microservices-based-Online-Store/index.html) page
