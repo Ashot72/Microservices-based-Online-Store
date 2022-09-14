@@ -2,7 +2,7 @@
 
 I built a Microservice-Based Online Store, customized it and deployed it in the local Kubernetes pods, where all the services have their own logic and the database as well as perform the specific functions. It is  built with Node JS and Next.js (React). It also uses NATS Streaming Server to implement publish -subscribe message distribution model for one-to-many communication.
 
-You can see in the video how I delete Products Service Pod but a user’s shopping cart is still available and you can even process the payment with Stripe (Test mode). This should be very interesting if you have built applications with monolithic architecture only. I deployed the app locally but you can run microservices, say, on Digital Ocean with Kubernetes.
+You can see in the video how I delete Products Service Pod but a user’s shopping cart is still available and you can even process the payment with Stripe (Test mode). This would be very interesting if you have built applications with monolithic architecture only. I deployed the app locally but you can run microservices, say, on Digital Ocean with Kubernetes.
 
 ```
 Create kubectl secrets for the app
