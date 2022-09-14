@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: products-mongo-depl
+spec:
+  replicas: 1
+  serviceName: products-mongo
+  selector:
+    matchLabels:
+      app: products-mongo
+  template:
+    metadata:
+      labels:
+        app: products-mongo
+    spec:     
+      containers:
+       - name: products-mongo
+         image: mongo  
+         volumeMounts:
+          - name: products-mongo-storage
+            mountPath: '/data/db'            
+      volumes:
+        - name: products-mongo-storage
+          persistentVolumeClaim:
+            claimName: products-claim
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: products-volume
+  labels: 
+    type: local
+spec:
+  storageClassName: hostpath
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/mnt/data-products"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: products-claim
+spec:
+  storageClassName: hostpath
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: products-mongo-srv
+spec:
+  selector:
+    app: products-mongo
+  ports:
+    - name: db
+      protocol: TCP
+      port: 27017
+      targetPort: 27017
+
+     

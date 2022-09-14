@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: payments-mongo-depl
+spec:
+  replicas: 1
+  serviceName: payments-mongo
+  selector:
+    matchLabels:
+      app: payments-mongo
+  template:
+    metadata:
+      labels:
+        app: payments-mongo
+    spec:
+      containers:
+       - name: payments-mongo
+         image: mongo
+         volumeMounts:
+          - name: payments-mongo-storage
+            mountPath: '/data/db'      
+      volumes:
+        - name: payments-mongo-storage
+          persistentVolumeClaim:
+            claimName: payments-claim
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: payments-volume
+  labels: 
+    type: local
+spec:
+  storageClassName: hostpath
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/mnt/data-payments"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: payments-claim
+spec:
+  storageClassName: hostpath
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: payments-mongo-srv
+spec:
+  selector:
+    app: payments-mongo
+  ports:
+    - name: db
+      protocol: TCP
+      port: 27017
+      targetPort: 27017

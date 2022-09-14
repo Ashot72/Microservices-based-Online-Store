@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: auth-mongo-depl
+spec:
+  replicas: 1
+  serviceName: auth-mongo
+  selector:
+    matchLabels:
+      app: auth-mongo
+  template:
+    metadata:
+      labels:
+        app: auth-mongo
+    spec:
+      containers:
+       - name: auth-mongo
+         image: mongo
+         volumeMounts:
+          - name: auth-mongo-storage
+            mountPath: '/data/db'      
+      volumes:
+        - name: auth-mongo-storage
+          persistentVolumeClaim:
+            claimName: auth-claim
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: auth-volume
+  labels: 
+    type: local
+spec:
+  storageClassName: hostpath
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/mnt/data-auth"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: auth-claim
+spec:
+  storageClassName: hostpath
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth-mongo-srv
+spec:
+  selector:
+    app: auth-mongo
+  ports:
+    - name: db
+      protocol: TCP
+      port: 27017
+      targetPort: 27017

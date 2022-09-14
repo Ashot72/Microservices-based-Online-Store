@@ -1,0 +1,58 @@
+apiVersion: skaffold/v2beta13
+kind: Config
+deploy:
+  kubectl:
+    manifests:
+      - ./infra/k8s/*
+build:
+  local:
+    push: false
+  artifacts:
+    - image: ashot72/client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+         - src: "**/*.tsx"
+           dest: .
+    - image: ashot72/auth
+      context: auth
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "src/**/*.ts"
+            dest: .
+    - image: ashot72/products
+      context: products
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "src/**/*.ts"
+            dest: .
+    - image: ashot72/cart
+      context: cart
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+         - src: "src/**/*.ts"
+           dest: .
+    - image: ashot72/payments
+      context: payments
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+         - src: "src/**/*.ts"
+           dest: .
+    - image: ashot72/expiration
+      context: expiration
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual: 
+          - src: 'src/**/*.ts'
+            dest: .

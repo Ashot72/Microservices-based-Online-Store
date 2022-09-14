@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: cart-mongo-depl
+spec:
+  replicas: 1
+  serviceName: cart-mongo
+  selector:
+    matchLabels:
+      app: cart-mongo
+  template:
+    metadata:
+      labels:
+        app: cart-mongo
+    spec:
+      containers:
+       - name: cart-mongo
+         image: mongo
+         volumeMounts:
+          - name: cart-mongo-storage
+            mountPath: '/data/db'      
+      volumes:
+       - name: cart-mongo-storage
+         persistentVolumeClaim:
+           claimName: cart-claim
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: cart-volume
+  labels: 
+    type: local
+spec:
+  storageClassName: hostpath
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/mnt/data-cart"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: cart-claim
+spec:
+  storageClassName: hostpath
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cart-mongo-srv
+spec:
+  selector:
+    app: cart-mongo
+  ports:
+    - name: db
+      protocol: TCP
+      port: 27017
+      targetPort: 27017
+     
