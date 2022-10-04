@@ -29,7 +29,7 @@ router.post("/api/payments", requireAuth, [
 
         const charge = await stripe.charges.create({
             currency: 'usd',
-            amount: total * 188,
+            amount: total * 100,
             source: token
         })
 
