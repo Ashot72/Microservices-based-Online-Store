@@ -21,6 +21,8 @@ Run the following command to install ingress-nginx
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.2.0/deploy/static/provider/cloud/deploy.yaml
 ```
 
+[Microfrontends](https://github.com/Ashot72/Microfrontends-Microservices-Based-Online-Store) version of this Online Store.
+
 Go to Microservices-Based Online Store [Video](https://youtu.be/Mb2B3ByuvJ0) page
 
 Go to Microservices-Based Online Store [Description](https://ashot72.github.io//Microservices-based-Online-Store/index.html) page
