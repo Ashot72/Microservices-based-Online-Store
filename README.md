@@ -19,6 +19,11 @@ Expiration Date: 12/34
 Run the following command to install ingress-nginx 
 
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.2.0/deploy/static/provider/cloud/deploy.yaml
+
+Run the following command to start the app
+
+skaffold dev
+
 ```
 
 [Microfrontends](https://github.com/Ashot72/Microfrontends-Microservices-Based-Online-Store) version of this Online Store.
